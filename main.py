@@ -1,16 +1,45 @@
-# This is a sample Python script.
+# Caesar - Verschlüsselung
 
-# Press Umschalt+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+clear_msg = input("Welche Nachricht soll verschlüsselt werden?")
+shift = int(input("Welchen Schlüssel möchtest du verwenden?"))
+# beschränke die Verschiebung auf max 26
+shift = shift % 26
+
+cypher_msg = ""
+clear_msg = clear_msg.upper()
+for char in clear_msg:
+    nb = ord(char)
+    if char.isalpha():
+        new_nb = nb + shift
+        if new_nb > 90:
+            new_nb -= 26
+    else:
+        new_nb = nb
+    new_char = chr(new_nb)
+    #print(char, nb, new_nb, new_char)
+    cypher_msg += new_char
+
+print(f"Die veschlüsselte Nachricht lautet: + {cypher_msg}")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Strg+F8 to toggle the breakpoint.
+
+def encrypt(clear_msg, shift):
+    # beschränke die Verschiebung auf max 26
+    shift = shift % 26
+
+    cypher_msg = ""
+    clear_msg = clear_msg.upper()
+    for char in clear_msg:
+        nb = ord(char)
+        if char.isalpha():
+            new_nb = nb + shift
+            if new_nb > 90:
+                new_nb -= 26
+        else:
+            new_nb = nb
+        new_char = chr(new_nb)
+        #print(char, nb, new_nb, new_char)
+        cypher_msg += new_char
+    return cypher_msg
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
