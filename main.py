@@ -1,6 +1,7 @@
 clear_msg = input("Welche Nachricht soll verschlüsselt werden?")
 
-# clear_msg = ""
+
+#clear_msg = ""
 clear_msg = clear_msg.lower()
 cypher_msg = ""
 wasNumber = False
@@ -37,7 +38,7 @@ for char in clear_msg:
         if wasNumber == True:
             cypher_msg += "Z"
         wasNumber = False
-        nb = (ord(char) - 96)
+        nb = (ord(char) -96)
         while nb > 0:
             if nb > 7:
                 cypher_msg += "/"
