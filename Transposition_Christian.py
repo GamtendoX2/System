@@ -4,7 +4,7 @@ import unittest
 def encrypt(clear_text, key):
     return
 
-
+#ölk
 class Test(unittest.TestCase):
     def test_encrypt_same_length(self):
         self.assertEqual(encrypt("", ""), "")
